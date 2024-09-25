@@ -1,0 +1,25 @@
+name: Download IaC for Appstack
+description: Download IaC for an appstack
+
+inputs:
+  appstack_uuid:
+    description: 'UUID of the appstack to download'
+    required: true
+    default: ''
+  output:
+    description: 'File destination for zipped IaC code'
+    required: false
+    default: './iac'
+  latest:
+    description: 'Download IaC of the latest version of the specified appstack'
+    required: false
+    default: 'false'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - 'appstack download-iac'
+    - '--appstack-uuid {{ inputs.appstack_uuid }}'
+    - '--output {{ inputs.output }}'
+    - '--latest {{ inputs.latest }}'
