@@ -20,6 +20,7 @@ runs:
   args:
     - appstack 
     - download-iac
+    - --uuid
     - ${{ inputs.appstack_uuid }}
     - --output
     - ${{ inputs.output }}
