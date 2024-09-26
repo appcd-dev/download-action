@@ -21,10 +21,10 @@ runs:
   args:
     - appstack 
     - download-iac
-    - {{ inputs.appstack_uuid }}
+    - ${{ inputs.appstack_uuid }}
     - --output
-    - {{ inputs.output }}
+    - ${{ inputs.output }}
     - --latest
-    - {{ inputs.latest }}
+    - ${{ inputs.latest }}
     # based on ACTIONS_RUNNER_DEBUG, set to 2 for debug
     - ${{ inputs.enableDebug == 'true' && '2' || '3' }}
