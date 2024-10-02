@@ -26,5 +26,6 @@ runs:
     - ${{ inputs.output }}
     - --latest
     - ${{ inputs.latest }}
+    - --log
     # based on ACTIONS_RUNNER_DEBUG, set to 2 for debug
     - ${{ inputs.enableDebug == 'true' && '2' || '3' }}
